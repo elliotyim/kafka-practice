@@ -1,0 +1,16 @@
+https://devocean.sk.com/blog/techBoardDetail.do?ID=164007
+
+# Topic 생성
+$ docker-compose exec kafka kafka-topics --create --topic my-topic --bootstrap-server kafka:9092 --replication-factor 1 --partitions 1
+
+# Topic 확인
+$ docker-compose exec kafka kafka-topics --describe --topic my-topic --bootstrap-server kafka:9092 
+
+# Consumer 실행
+$ docker-compose exec kafka bash
+$ kafka-console-consumer --topic my-topic --bootstrap-server kafka:9092
+
+
+# Producer 실행
+$ docker-compose exec kafka bash
+$ kafka-console-producer --topic my-topic --broker-list kafka:9092
